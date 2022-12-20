@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon backend/app.ts",
     "start": "NODE_ENV=production node api/app.js",
-    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "tsc && cd frontend && npm install && npm run build",
     "build": "tsc"
   },
   "dependencies": {

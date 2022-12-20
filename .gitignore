@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 
 # Production files
+api
 
 # Local development
 .env
