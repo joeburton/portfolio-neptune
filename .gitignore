@@ -2,6 +2,9 @@
 node_modules
 npm-debug.log
 
+# Production files
+api
+
 # Local development
 *.env
 *.dev
@@ -10,3 +13,5 @@ npm-debug.log
 # Docker
 Dockerfile
 docker-compose.yml
+
+notes.txt

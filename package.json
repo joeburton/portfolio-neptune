@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "portfolio-jupiter",
   "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Joe Burton's Portfolio - Built using React and NodeJS",
   "engines": {
     "node": "16.x"
   },
