@@ -52,6 +52,6 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`App is listening on port ${port} !`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`App is listening on port ${process.env.PORT || port} !`);
 });
