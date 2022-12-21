@@ -2,10 +2,12 @@ import express, { Request, Response } from 'express';
 import { UploadedFile } from 'express-fileupload';
 import { ObjectId } from 'mongodb';
 import { connectToDatabase } from './mongoUtilities';
-
+import path from 'path';
 const router = express.Router();
 
 import projects from './projects';
+
+const __dirname = path.resolve();
 
 const getCollection = async (collectionName: string) => {
   let { db } = await connectToDatabase();
@@ -117,38 +119,41 @@ router.post('/update-item', sessionChecker, async (req, res) => {
 
   const collection = await getCollection('items');
 
-  imageFile.mv(`../public/images/${imageFile.name}`, (err) => {
-    if (err) {
-      return res.status(500).send({ Error: err.toString() });
-    }
+  imageFile.mv(
+    `${__dirname}/frontend/build/images/${imageFile.name}`,
+    (err) => {
+      if (err) {
+        return res.status(500).send({ Error: err.toString() });
+      }
 
-    try {
-      collection.updateOne(
-        { _id: new ObjectId(item._id) },
-        {
-          $set: {
-            logo: imageFile.name,
-            role: item.role,
-            company: item.company,
-            description: item.description,
-            skills: item.skills,
-            class: item.class,
-            links: item.links,
+      try {
+        collection.updateOne(
+          { _id: new ObjectId(item._id) },
+          {
+            $set: {
+              logo: imageFile.name,
+              role: item.role,
+              company: item.company,
+              description: item.description,
+              skills: item.skills,
+              class: item.class,
+              links: item.links,
+            },
           },
-        },
-        () => {
-          collection
-            .find()
-            .sort({ _id: -1 })
-            .toArray((_err, items) => {
-              res.send(JSON.stringify(items));
-            });
-        }
-      );
-    } catch (err: any) {
-      res.status(500).send({ Error: err.toString() });
+          () => {
+            collection
+              .find()
+              .sort({ _id: -1 })
+              .toArray((_err, items) => {
+                res.send(JSON.stringify(items));
+              });
+          }
+        );
+      } catch (err: any) {
+        res.status(500).send({ Error: err.toString() });
+      }
     }
-  });
+  );
 });
 
 router.post('/add-item', sessionChecker, async (req, res) => {
@@ -160,29 +165,32 @@ router.post('/add-item', sessionChecker, async (req, res) => {
 
   const collection = await getCollection('items');
 
-  imageFile.mv(`../public/images/${imageFile.name}`, (err) => {
-    if (err) {
-      return res.status(500).send({ Error: err.toString() });
-    }
+  imageFile.mv(
+    `${__dirname}/frontend/build/images/${imageFile.name}`,
+    (err) => {
+      if (err) {
+        return res.status(500).send({ Error: err.toString() });
+      }
 
-    try {
-      collection
-        .insertOne({
-          ...req.body,
-          logo: imageFile.name,
-        })
-        .then(() => {
-          collection
-            .find()
-            .sort({ _id: -1 })
-            .toArray((_err, items) => {
-              res.send(JSON.stringify(items));
-            });
-        });
-    } catch (err: any) {
-      res.status(500).send({ Error: err.toString() });
+      try {
+        collection
+          .insertOne({
+            ...req.body,
+            logo: imageFile.name,
+          })
+          .then(() => {
+            collection
+              .find()
+              .sort({ _id: -1 })
+              .toArray((_err, items) => {
+                res.send(JSON.stringify(items));
+              });
+          });
+      } catch (err: any) {
+        res.status(500).send({ Error: err.toString() });
+      }
     }
-  });
+  );
 });
 
 router.get('/add-user', sessionChecker, async (req, res) => {
