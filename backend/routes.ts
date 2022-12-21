@@ -71,7 +71,7 @@ router.post('/logout', (req, res) => {
 router.get('/source', async (_req, res) => {
   try {
     const collection = await getCollection('items');
-    const result = await collection.find().sort({ _id: -1 }).toArray();
+    const result = await collection.find().sort({ _id: 1 }).toArray();
     res.send(JSON.stringify(result));
   } catch (err: any) {
     res.status(500).send({ Error: err.toString() });
