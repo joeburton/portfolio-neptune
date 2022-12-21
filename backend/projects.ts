@@ -1,5 +1,16 @@
 export default [
   {
+    order: 20,
+    logo: 'publicissapient.png',
+    role: 'Manager Experience Technology / Frontend Lead',
+    company: 'Publicis Sapient',
+    description: 'Hands-on Frontend Lead / People Manager',
+    skills:
+      'React, NodeJS, GraphQL, NextJS, Jest, React Testing Library, styled-components, Storybook, CSS, SASS',
+    class: 'publicis-sapient',
+    links: null,
+  },
+  {
     order: 19,
     logo: 'worldfirst.png',
     role: 'Senior Software Engineer',
