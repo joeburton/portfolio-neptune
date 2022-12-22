@@ -298,18 +298,4 @@ export default [
     skills: 'Flash&#44; JavaScript/jQuery&#44; XHTML&#44; CSS',
     links: [{ visual: 'https://ogilvy.co.uk', url: 'https://ogilvy.co.uk' }],
   },
-  {
-    order: 1,
-    role: 'Research',
-    description: 'React CRUD Application',
-    company: 'Personal',
-    skills:
-      'React&#44; Redux&#44; Handlebars&#44; Node&#44; Express&#44; MongoDB&#44; Bootstrap &amp; Gulp',
-    links: [
-      {
-        visual: 'directory.joe-burton.com',
-        url: 'http://directory.joe-burton.com',
-      },
-    ],
-  },
 ];
