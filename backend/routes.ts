@@ -7,7 +7,7 @@ const router = express.Router();
 
 import projects from './projects';
 
-const __dirname = path.resolve();
+const rootDirectory = path.resolve();
 
 const getCollection = async (collectionName: string) => {
   let { db } = await connectToDatabase();
@@ -118,9 +118,9 @@ router.post('/update-item', sessionChecker, async (req, res) => {
   const item = req.body;
 
   const collection = await getCollection('items');
-
+  console.log(`${rootDirectory}`);
   imageFile.mv(
-    `${__dirname}/frontend/build/images/${imageFile.name}`,
+    `${rootDirectory}/frontend/build/images/${imageFile.name}`,
     (err) => {
       if (err) {
         return res.status(500).send({ Error: err.toString() });
@@ -166,7 +166,7 @@ router.post('/add-item', sessionChecker, async (req, res) => {
   const collection = await getCollection('items');
 
   imageFile.mv(
-    `${__dirname}/frontend/build/images/${imageFile.name}`,
+    `${rootDirectory}/frontend/build/images/${imageFile.name}`,
     (err) => {
       if (err) {
         return res.status(500).send({ Error: err.toString() });

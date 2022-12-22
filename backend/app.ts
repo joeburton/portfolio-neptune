@@ -12,7 +12,7 @@ import routes from './routes';
 const app: Application = express();
 const port: number = 3001;
 
-const __dirname = path.resolve();
+const rootDirectory = path.resolve();
 
 app.use(cors());
 app.use(fileUpload());
@@ -44,12 +44,12 @@ const requestLogger = (req: Request, res: Response, next: Function) => {
 
 app.use(requestLogger);
 
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+app.use(express.static(path.join(rootDirectory, 'frontend/build')));
 
 app.use('/api', routes);
 
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+  res.sendFile(path.join(rootDirectory, 'frontend/build', 'index.html'));
 });
 
 app.listen(process.env.PORT || port, () => {
