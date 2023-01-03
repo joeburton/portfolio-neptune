@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "../../css/SimpleList.module.css";
 
 interface Candidate {
