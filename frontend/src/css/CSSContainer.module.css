@@ -1,0 +1,36 @@
+.layoutContainer {
+  container-type: inline-size;
+}
+
+/* Default heading styles for the card title */
+
+.layoutContainer {
+  border: 1px solid #ccc;
+  list-style: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+
+.layoutContainer h2 {
+  text-align: left;
+}
+
+.layoutContainer .item h3 {
+  text-align: left;
+  font-size: 1.8em;
+}
+
+.layoutContainer .item p {
+  font-size: 1em;
+}
+
+/* Container query applied if the container is larger than 700px */
+@container (min-width: 700px) {
+  .layoutContainer .item h3 {
+    font-size: 2.2em;
+  }
+  .layoutContainer .item p {
+    font-size: 1.5em;
+  }
+}
