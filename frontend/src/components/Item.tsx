@@ -43,7 +43,7 @@ export const Item = (item: ItemInterface) => {
       setExpandVisible(false);
     }
   }, [item]);
-  console.log(process.env.PUBLIC_URL);
+
   return (
     <li className={styles.item} data-testid='project-item'>
       {item.logo && (

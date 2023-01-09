@@ -15,16 +15,22 @@ export const SimpleCode = () => {
   const overTenYearsOld = myFamily.filter((item) => item.age >= 10);
   const underTenYearsOld = myFamily.filter((item) => item.age < 10);
 
-  overTenYearsOld.sort((a, b) => a.age - b.age);
+  overTenYearsOld.sort((a, b) => {
+    return a.age - b.age;
+  });
+
+  underTenYearsOld.sort((a, b) => a.age - b.age);
 
   const father = myFamily.find((item) => item.name.includes('Paul'));
+
+  const info: any = { roles: { editor: true, admin: false } };
 
   return (
     <div className={styles.container}>
       <h3>My Family</h3>
       <div>
         Everyone over 10 years old:
-        <pre>{JSON.stringify(overTenYearsOld.sort(), null, 3)}</pre>
+        <pre>{JSON.stringify(overTenYearsOld, null, 3)}</pre>
       </div>
       <div>
         Everyone under 10 years old:

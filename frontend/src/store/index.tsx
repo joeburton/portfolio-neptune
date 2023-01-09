@@ -6,8 +6,12 @@ interface User {
   loggedIn: boolean;
 }
 
+type ContentItem = {
+  [key: string]: { [key: string]: string };
+};
+
 type State = {
-  content: any;
+  content: ContentItem;
   items: Array<ItemInterface>;
   manageActive: boolean;
   itemToEditId?: string;
@@ -15,7 +19,7 @@ type State = {
 };
 
 export const DEFAULT_STATE: State = {
-  content: [],
+  content: {},
   items: [],
   manageActive: false,
   itemToEditId: '',

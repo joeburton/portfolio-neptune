@@ -1,6 +1,4 @@
-import React from "react";
-
-import styles from "../../css/MapList.module.css";
+import styles from '../../css/MapList.module.css';
 
 interface Candidate {
   name: string;
