@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from './Header';
+import Footer from './Footer';
 
-import Experiments from "./Experiments";
-import ContentIntro from "./ContentIntro";
-import ContentAbout from "./ContentAbout";
-import ContentContact from "./ContentContact";
-import ContentProjects from "./ContentProjects";
+import Experiments from './Experiments';
+import ContentIntro from './ContentIntro';
+import ContentAbout from './ContentAbout';
+import ContentContact from './ContentContact';
+import ContentProjects from './ContentProjects';
 
-import siteContent from "../content";
-import { useAppContext } from "../store";
+import siteContent from '../content';
+import { useAppContext } from '../store';
 
 const scrollTo = (e: { target: { id: any }; preventDefault: () => void }) => {
   const element = document.querySelector(e.target.id).offsetTop;
   e.preventDefault();
   window.scrollTo({
-    behavior: "smooth",
+    behavior: 'smooth',
     left: 0,
     top: element,
   });
@@ -32,11 +32,11 @@ const App = () => {
   }, [dispatch, ACTIONS]);
 
   return (
-    <div className="wrapper" data-testid="app">
+    <div className='wrapper' data-testid='app'>
       {state.content && (
         <>
           <Header content={state.content.header} scrollTo={scrollTo} />
-          <section className={`main ${state.manageActive ? "hidden" : ""}`}>
+          <section className={`main ${state.manageActive ? 'hidden' : ''}`}>
             <Experiments content={state.content.experiments} />
             <ContentIntro content={state.content.intro} />
             <ContentProjects content={state.content} scrollTo={scrollTo} />

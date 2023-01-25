@@ -8,6 +8,7 @@ import CSSContainer from './experiments/CSSContainer';
 import { ComponentList } from './experiments/SimpleList';
 import { KeyPress } from './experiments/KeyPress';
 import { useKeyPress } from '../hooks/useKeyPress';
+import { getCookie, setCookie } from '../utils';
 
 const rule = {
   background: `url(${process.env.PUBLIC_URL + `../images/line.png`}) repeat-x`,
@@ -30,6 +31,9 @@ const ContentIntro = ({ content }: any) => {
   const hide = {
     display: openPress ? 'block' : 'none',
   };
+
+  // console.log(getCookie('SMUCK_LUP'));
+  // console.log(getCookie('BLUE_MOON'));
 
   return (
     <section
