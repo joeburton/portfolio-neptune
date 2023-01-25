@@ -20,7 +20,7 @@ const content = {
     body1:
       "Since graduating in 2003 I've gained experience working for a variety of companies such as InDzine, OgilvyOne, the Guardian Professional, Sapient Nitro, The Engine Group, Rank Interactive, Bauer Media, lastminute.com, PhotoBox, Tribal Worldwide, Cambridge Assessment, Boiler Juice, CashFlows, GE and WorldFirst along with other small and medium sized Advertising Agencies, Software houses and client side for companies such as John Lewis.",
     body2:
-      "I have spent the bulk of my career working in London and the South of England. But I've also been lucky enough to experience working overseas in Brisbane, Australia and Munich, Germany. In 2021 my family and I made the move to the beautiful town of Settle in North Yorkshire where we currently live.",
+      "I have spent the bulk of my career working in London and the South of England. But I've also been lucky enough to experience working overseas in Brisbane, Australia and Munich, Germany.",
   },
   contact: {
     title: 'Contact',
