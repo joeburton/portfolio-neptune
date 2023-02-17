@@ -8,7 +8,7 @@ const setCookie = (req: Request, res: Response, next: Function) => {
     var randomNumber = Math.random().toString();
     randomNumber = randomNumber.substring(2, randomNumber.length);
     res.cookie('BLUE_MOON', randomNumber, {
-      maxAge: 900000,
+      maxAge: 2 * 60 * 60 * 1000, // 2 hours
       httpOnly: false,
     });
     console.log('cookie created successfully');

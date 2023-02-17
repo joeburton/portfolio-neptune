@@ -2,6 +2,7 @@ import styles from '../css/ContentExperiments.module.css';
 
 import { Carousel } from './experiments/Carousel';
 import { Accordion } from './experiments/Accordion';
+import { TypeScriptExperiments } from './experiments/TypeScriptExperiments';
 import { MapList } from './experiments/MapList';
 import { SimpleCode } from './experiments/SimpleCode';
 import CSSContainer from './experiments/CSSContainer';
@@ -32,8 +33,9 @@ const ContentIntro = ({ content }: any) => {
     display: openPress ? 'block' : 'none',
   };
 
-  // console.log(getCookie('SMUCK_LUP'));
-  // console.log(getCookie('BLUE_MOON'));
+  setCookie('DRAGON_BE_HERE', 'na!');
+  console.log(getCookie('SMUCK_LUP'));
+  console.log(getCookie('BLUE_MOON'));
 
   return (
     <section
@@ -47,6 +49,7 @@ const ContentIntro = ({ content }: any) => {
             <span className={styles.welcome}>{content.title}</span>
           </h1>
           <div>
+            <TypeScriptExperiments />
             <SimpleCode />
             <CSSContainer />
             <KeyPress />
