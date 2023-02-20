@@ -33,7 +33,7 @@ const ContentIntro = ({ content }: any) => {
     display: openPress ? 'block' : 'none',
   };
 
-  setCookie('DRAGON_BE_HERE', 'na!');
+  setCookie('DRAGONS_BE_HERE', '666');
   console.log(getCookie('SMUCK_LUP'));
   console.log(getCookie('BLUE_MOON'));
 

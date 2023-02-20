@@ -27,6 +27,7 @@ app.use(
 );
 
 const oneDay = 1000 * 60 * 60 * 24;
+const expiryDate = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
 
 app.use(
   session({
