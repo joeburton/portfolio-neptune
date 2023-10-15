@@ -2,14 +2,14 @@ import styles from "../css/ContentExperiments.module.css";
 
 import { Carousel } from "./experiments/Carousel";
 import { Accordion } from "./experiments/Accordion";
+import { TypeScriptExperiments } from "./experiments/TypeScriptExperiments";
 import { MapList } from "./experiments/MapList";
 import { SimpleCode } from "./experiments/SimpleCode";
 import CSSContainer from "./experiments/CSSContainer";
 import { ComponentList } from "./experiments/SimpleList";
 import { KeyPress } from "./experiments/KeyPress";
 import { useKeyPress } from "../hooks/useKeyPress";
-
-import { List } from "./experiments/List";
+import { getCookie, setCookie } from "../utils";
 
 const rule = {
   background: `url(${process.env.PUBLIC_URL + `../images/line.png`}) repeat-x`,
@@ -22,6 +22,9 @@ const candidates = [
   { name: "Ryan Bull", score: "6 out 10" },
 ];
 
+const result = candidates.filter((item) => /Bur/.test(item.name));
+console.log(result);
+
 const ContentIntro = ({ content }: any) => {
   const openPress: boolean = useKeyPress("o");
 
@@ -32,6 +35,10 @@ const ContentIntro = ({ content }: any) => {
   const hide = {
     display: openPress ? "block" : "none",
   };
+
+  setCookie("DRAGONS_BE_HERE", "666");
+  console.log(getCookie("SMUCK_LUP"));
+  console.log(getCookie("BLUE_MOON"));
 
   return (
     <section
@@ -45,7 +52,7 @@ const ContentIntro = ({ content }: any) => {
             <span className={styles.welcome}>{content.title}</span>
           </h1>
           <div>
-            <List items={candidates} />
+            <TypeScriptExperiments />
             <SimpleCode />
             <CSSContainer />
             <KeyPress />

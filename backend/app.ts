@@ -8,6 +8,7 @@ import cors from 'cors';
 import 'dotenv/config';
 
 import routes from './routes';
+import setCookie from './utils/setCookie';
 
 const app: Application = express();
 const port: number = 3001;
@@ -26,23 +27,28 @@ app.use(
 );
 
 const oneDay = 1000 * 60 * 60 * 24;
+const expiryDate = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
 
 app.use(
   session({
     name: process.env.SESSION_NAME,
-    secret: process.env.SESSION_SECRET || 'somethingrandomhere',
+    secret: process.env.SESSION_SECRET || 'something-random-here',
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: oneDay },
+    cookie: { maxAge: oneDay, httpOnly: false },
   })
 );
 
 const requestLogger = (req: Request, res: Response, next: Function) => {
   console.log(`${req.method} url:: ${req.url}`);
+  console.log(`Cookies`, req.cookies);
   next();
 };
 
 app.use(requestLogger);
+
+// set a cookie
+app.use(setCookie);
 
 app.use(express.static(path.join(rootDirectory, 'frontend/build')));
 

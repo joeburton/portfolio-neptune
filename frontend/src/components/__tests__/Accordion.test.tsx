@@ -1,51 +1,50 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import { Accordion } from "../experiments/Accordion";
+import { Accordion } from '../experiments/Accordion';
 
-describe("Accordion", () => {
-  it("should render the accordion in a collapsed state", () => {
+describe('Accordion', () => {
+  it('should render the accordion in a collapsed state', () => {
     const { getByTestId } = render(
       <Accordion
-        items={[{ title: "Item 1", description: "something detailed" }]}
+        items={[{ title: 'Item 1', description: 'something detailed' }]}
       />
     );
 
-    expect(getByTestId("accordion")).toBeInTheDocument();
-    expect(getByTestId("accordion-description")).toHaveClass("collapsed");
+    expect(getByTestId('accordion')).toBeInTheDocument();
+    expect(getByTestId('accordion-description')).toHaveClass('collapsed');
   });
 
-  it("should toggle open and closed the accordion when clicked", () => {
+  it('should toggle open and closed the accordion when clicked', () => {
     const { getByText, getByTestId } = render(
       <Accordion
-        items={[{ title: "Item 1", description: "something detailed" }]}
+        items={[{ title: 'Item 1', description: 'something detailed' }]}
       />
     );
 
-    userEvent.click(getByText("Item 1"));
-    expect(getByTestId("accordion-description")).not.toHaveClass("collapsed");
+    userEvent.click(getByText('Item 1'));
+    expect(getByTestId('accordion-description')).not.toHaveClass('collapsed');
 
-    userEvent.click(getByText("Item 1"));
-    expect(getByTestId("accordion-description")).toHaveClass("collapsed");
+    userEvent.click(getByText('Item 1'));
+    expect(getByTestId('accordion-description')).toHaveClass('collapsed');
   });
 
-  it("should render three accordion items", () => {
+  it('should render three accordion items', () => {
     const { getByText, getAllByTestId } = render(
       <Accordion
         items={[
-          { title: "Item 1", description: "something detailed" },
-          { title: "Item 2", description: "something detailed" },
-          { title: "Item 3", description: "something detailed" },
+          { title: 'Item 1', description: 'something detailed' },
+          { title: 'Item 2', description: 'something detailed' },
+          { title: 'Item 3', description: 'something detailed' },
         ]}
       />
     );
 
-    const items = getAllByTestId("accordion-item");
+    const items = getAllByTestId('accordion-item');
 
-    expect(getByText("Item 1")).toBeInTheDocument();
-    expect(getByText("Item 2")).toBeInTheDocument();
-    expect(getByText("Item 3")).toBeInTheDocument();
+    expect(getByText('Item 1')).toBeInTheDocument();
+    expect(getByText('Item 2')).toBeInTheDocument();
+    expect(getByText('Item 3')).toBeInTheDocument();
 
     expect(items.length).toEqual(3);
   });

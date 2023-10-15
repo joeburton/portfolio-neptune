@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { UploadedFile } from 'express-fileupload';
 import { ObjectId } from 'mongodb';
-import { connectToDatabase } from './mongoUtilities';
+import { connectToDatabase } from './utils/mongoConnection';
 import path from 'path';
 const router = express.Router();
 
@@ -68,7 +68,7 @@ router.post('/logout', (req, res) => {
   res.send({ success: 'You successfully logged out' });
 });
 
-router.get('/source', async (_req, res) => {
+router.get('/source', async (req, res) => {
   try {
     const collection = await getCollection('items');
     const result = await collection.find().sort({ _id: 1 }).toArray();
