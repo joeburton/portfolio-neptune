@@ -39,6 +39,8 @@ router.post('/auth', async (req, res) => {
     const users = await getCollection('users');
     const user = await users.findOne({ username: username });
 
+    console.log(user, username, password);
+
     if (user && user.password === password) {
       if (req.session) {
         // @ts-ignore
@@ -193,7 +195,7 @@ router.post('/add-item', sessionChecker, async (req, res) => {
   );
 });
 
-router.get('/add-user', sessionChecker, async (req, res) => {
+router.post('/add-user', sessionChecker, async (req, res) => {
   try {
     const collection = await getCollection('users');
     const result = await collection.insertOne(req.query);
@@ -203,10 +205,11 @@ router.get('/add-user', sessionChecker, async (req, res) => {
   }
 });
 
-router.get('/users', sessionChecker, async (req, res) => {
+router.get('/users', sessionChecker, async (_req, res) => {
   try {
     const collection = await getCollection('users');
     const result = await collection.find().toArray();
+
     res.send(JSON.stringify(result));
   } catch (err: any) {
     res.status(500).send({ Error: err.toString() });
