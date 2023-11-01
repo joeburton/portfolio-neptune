@@ -40,7 +40,7 @@ app.use(
 );
 
 const requestLogger = (req: Request, res: Response, next: Function) => {
-  console.log(`${req.method} url:: ${req.url}`);
+  console.log(`${req.method} url: ${req.url}`);
   console.log(`Cookies`, req.cookies);
   next();
 };

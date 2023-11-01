@@ -71,6 +71,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/source', async (req, res) => {
+  console.log('source data')
   try {
     const collection = await getCollection('items');
     const result = await collection.find().sort({ _id: 1 }).toArray();
@@ -198,7 +199,7 @@ router.post('/add-item', sessionChecker, async (req, res) => {
 router.post('/add-user', sessionChecker, async (req, res) => {
   try {
     const collection = await getCollection('users');
-    const result = await collection.insertOne(req.query);
+    const result = await collection.insertOne(req.body);
     res.send(JSON.stringify(result));
   } catch (err: any) {
     res.status(500).send({ Error: err.toString() });
@@ -215,5 +216,20 @@ router.get('/users', sessionChecker, async (_req, res) => {
     res.status(500).send({ Error: err.toString() });
   }
 });
+
+router.post('/get-user-details', sessionChecker, async (req, res) => {
+  const username = req.body.username;
+  console.log(username)
+  try {
+    const collection = await getCollection('users');
+    const user = await collection.find({username : username}).toArray();
+    console.log(user)
+    res.send(JSON.stringify(user));
+  } catch (err: any) {
+    res.status(500).send({ Error: err.toString() });
+  }
+});
+
+
 
 export default router;
