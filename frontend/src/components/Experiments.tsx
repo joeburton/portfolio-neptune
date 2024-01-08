@@ -37,8 +37,8 @@ const ContentIntro = ({ content }: any) => {
   };
 
   setCookie("DRAGONS_BE_HERE", "666");
-  console.log(getCookie("SMUCK_LUP"));
-  console.log(getCookie("BLUE_MOON"));
+  // console.log(getCookie("SMUCK_LUP"));
+  // console.log(getCookie("BLUE_MOON"));
 
   return (
     <section

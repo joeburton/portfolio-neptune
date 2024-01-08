@@ -17,8 +17,9 @@ export const TypeScriptExperiments = () => {
     }
   }
 
-  // let mediaType: PrintMedia = getMedia("Forbes");
-  // console.log("mediaType: ", mediaType);
+  let mediaType: PrintMedia = getMedia("Sun");
+
+  console.log("mediaType: ", mediaType);
 
   enum CardinalDirection {
     North = "N",
@@ -26,8 +27,6 @@ export const TypeScriptExperiments = () => {
     South = "S",
     West = "W",
   }
-
-  // console.log(CardinalDirection.North);
 
   if ("N" === CardinalDirection.North) {
     console.log("Go North");
