@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { useAppContext } from "../store";
 import { ItemInterface } from "./Item";

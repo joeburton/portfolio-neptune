@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
-import { ChevronRight, ChevronLeft } from 'react-bootstrap-icons';
+import { useState, useRef } from "react";
+import { ChevronRight, ChevronLeft } from "react-bootstrap-icons";
 
-import styles from '../../css/Carousel.module.css';
+import styles from "../../css/Carousel.module.css";
 
 interface Item {
   description: string;
@@ -49,13 +49,13 @@ export const Carousel = ({ items }: CarouselInterface) => {
     setItemPosition(slidePos);
   };
 
-  console.log('Carousel state update.', itemPosition);
+  console.log("Carousel state update.", itemPosition);
 
   return (
     <>
-      <div data-testid='carousel' className={styles.carousel}>
+      <div data-testid="carousel" className={styles.carousel}>
         <div className={styles.left} onClick={previous}>
-          <ChevronLeft color='white' size={20} />
+          <ChevronLeft color="white" size={20} />
         </div>
         <ul className={styles.items} ref={eleRef}>
           {items.map((item, i) => (
@@ -63,7 +63,7 @@ export const Carousel = ({ items }: CarouselInterface) => {
           ))}
         </ul>
         <div className={styles.right} onClick={next}>
-          <ChevronRight color='white' size={20} />
+          <ChevronRight color="white" size={20} />
         </div>
       </div>
       <ul className={styles.tracker}>

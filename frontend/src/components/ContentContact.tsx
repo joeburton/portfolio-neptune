@@ -1,4 +1,3 @@
-import React from "react";
 import BackToTop from "./BackToTop";
 
 import styles from "../css/ContentContact.module.css";

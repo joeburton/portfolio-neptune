@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useKeyPress } from "../../hooks/useKeyPress";
 
 import styles from "../../css/KeyPress.module.css";
