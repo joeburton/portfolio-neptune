@@ -50,7 +50,7 @@ const ItemForm = (props: { id?: string }) => {
   const item = itemToEdit.length > 0 ? itemToEdit[0] : {};
 
   return (
-    <div className={styles['form-container']} data-testid='add-item'>
+    <div className={styles['form-container']} data-testid="add-item">
       <Formik
         initialValues={{
           logo: '',
@@ -99,87 +99,87 @@ const ItemForm = (props: { id?: string }) => {
               )}
               {!isSubmitted && (
                 <>
-                  <div className={styles['form-group']} data-testid='image'>
-                    <label htmlFor='logo'>Upload image</label>
+                  <div className={styles['form-group']} data-testid="image">
+                    <label htmlFor="logo">Upload image</label>
                     <input
-                      id='logo'
-                      name='logo'
-                      type='file'
-                      data-testid='upload-image'
+                      id="logo"
+                      name="logo"
+                      type="file"
+                      data-testid="upload-image"
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         if (e.currentTarget.files) {
                           setFieldValue('logo', e.currentTarget.files[0]);
                         }
                       }}
-                      className='form-control'
+                      className="form-control"
                     />
                     {item._id && !values.logo && (
                       <img
                         src={`../images/${item.logo}`}
                         height={40}
-                        data-testid='saved-image'
+                        data-testid="saved-image"
                         alt={item.company}
                       />
                     )}
                     {values.logo && <ImagePreview file={values.logo} />}
                     <ErrorMessage
                       className={styles['error-message']}
-                      component='div'
-                      name='logo'
+                      component="div"
+                      name="logo"
                     />
                   </div>
                   <div
                     className={styles['form-group']}
-                    data-testid='class-name'
+                    data-testid="class-name"
                   >
-                    <label htmlFor='class'>Image class name</label>
-                    <Field name='class' />
+                    <label htmlFor="class">Image class name</label>
+                    <Field name="class" />
                     <ErrorMessage
                       className={styles['error-message']}
-                      component='div'
-                      name='class'
+                      component="div"
+                      name="class"
                     />
                   </div>
-                  <div className={styles['form-group']} data-testid='role'>
-                    <label htmlFor='role'>Role</label>
-                    <Field name='role' />
+                  <div className={styles['form-group']} data-testid="role">
+                    <label htmlFor="role">Role</label>
+                    <Field name="role" />
                     <ErrorMessage
                       className={styles['error-message']}
-                      component='div'
-                      name='role'
+                      component="div"
+                      name="role"
                     />
                   </div>
-                  <div className={styles['form-group']} data-testid='company'>
-                    <label htmlFor='company'>Company</label>
-                    <Field name='company' />
+                  <div className={styles['form-group']} data-testid="company">
+                    <label htmlFor="company">Company</label>
+                    <Field name="company" />
                     <ErrorMessage
                       className={styles['error-message']}
-                      component='div'
-                      name='company'
+                      component="div"
+                      name="company"
                     />
                   </div>
-                  <div className={styles['form-group']} data-testid='skills'>
-                    <label htmlFor='skills'>Skills used</label>
-                    <Field name='skills' />
+                  <div className={styles['form-group']} data-testid="skills">
+                    <label htmlFor="skills">Skills used</label>
+                    <Field name="skills" />
                     <ErrorMessage
                       className={styles['error-message']}
-                      component='div'
-                      name='skills'
+                      component="div"
+                      name="skills"
                     />
                   </div>
                   <div
                     className={styles['form-group']}
-                    data-testid='description'
+                    data-testid="description"
                   >
-                    <label htmlFor='description'>Description</label>
-                    <Field as='textarea' name='description' />
+                    <label htmlFor="description">Description</label>
+                    <Field as="textarea" name="description" />
                     <ErrorMessage
                       className={styles['error-message']}
-                      component='div'
-                      name='description'
+                      component="div"
+                      name="description"
                     />
                   </div>
-                  <button type='submit' disabled={isSubmitting ? true : false}>
+                  <button type="submit" disabled={isSubmitting ? true : false}>
                     Submit
                   </button>
                 </>

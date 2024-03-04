@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import styles from "../css/Item.module.css";
-import "../css/logos.css";
+import styles from '../css/Item.module.css';
+import '../css/logos.css';
 
 export interface LinksInterface {
   visual: string;
@@ -50,11 +50,11 @@ export const Item = (item: ItemInterface) => {
         <img
           src={process.env.PUBLIC_URL + `../images/${item.logo}`}
           alt={`${item.company}`}
-          className={`${styles["company-logo"]} ${item.class}`}
+          className={`${styles['company-logo']} ${item.class}`}
         />
       )}
       {item.role && (
-        <p className={!item.logo ? "no-logo" : ""}>Role&#58; {item.role}</p>
+        <p className={!item.logo ? 'no-logo' : ''}>Role&#58; {item.role}</p>
       )}
       {item.company && <p>Company: {item.company}</p>}
       {item.skills && (

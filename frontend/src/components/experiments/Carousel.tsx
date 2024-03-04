@@ -1,7 +1,7 @@
-import { useState, useRef } from "react";
-import { ChevronRight, ChevronLeft } from "react-bootstrap-icons";
+import { useState, useRef } from 'react';
+import { ChevronRight, ChevronLeft } from 'react-bootstrap-icons';
 
-import styles from "../../css/Carousel.module.css";
+import styles from '../../css/Carousel.module.css';
 
 interface Item {
   description: string;
@@ -49,7 +49,7 @@ export const Carousel = ({ items }: CarouselInterface) => {
     setItemPosition(slidePos);
   };
 
-  console.log("Carousel state update.", itemPosition);
+  console.log('Carousel state update.', itemPosition);
 
   return (
     <>

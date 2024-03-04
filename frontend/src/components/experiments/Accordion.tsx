@@ -19,12 +19,12 @@ const AccordionItem = ({ title, description }: AccordionItemInterface) => {
   }
 
   return (
-    <li data-testid='accordion-item'>
+    <li data-testid="accordion-item">
       <span className={styles.title} onClick={toggleIsOpen}>
         {title}
       </span>
       <span
-        data-testid='accordion-description'
+        data-testid="accordion-description"
         className={`${styles.description} ${isOpen ? '' : styles.collapsed}`}
       >
         {description}
@@ -35,7 +35,7 @@ const AccordionItem = ({ title, description }: AccordionItemInterface) => {
 
 export const Accordion = ({ items }: AccordionItemsInterface) => {
   return (
-    <ul className={styles.accordion} data-testid='accordion'>
+    <ul className={styles.accordion} data-testid="accordion">
       {items.length &&
         items.map((item, i) => <AccordionItem key={i} {...item} />)}
     </ul>

@@ -30,22 +30,22 @@ const Header = ({ content, scrollTo }: HeaderProps) => {
   }
 
   return (
-    <div data-testid='header'>
-      <header id='top'>
+    <div data-testid="header">
+      <header id="top">
         <nav>
           <ul>
             <li>
-              <button id='#projects' onClick={scrollTo}>
+              <button id="#projects" onClick={scrollTo}>
                 {content.link1}
               </button>
             </li>
             <li>
-              <button id='#about' onClick={scrollTo}>
+              <button id="#about" onClick={scrollTo}>
                 {content.link2}
               </button>
             </li>
             <li>
-              <button id='#contact' onClick={scrollTo}>
+              <button id="#contact" onClick={scrollTo}>
                 {content.link3}
               </button>
             </li>

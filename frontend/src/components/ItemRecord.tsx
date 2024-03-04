@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { useAppContext } from "../store";
-import { ItemInterface } from "./Item";
-import styles from "../css/ItemRecord.module.css";
+import { useAppContext } from '../store';
+import { ItemInterface } from './Item';
+import styles from '../css/ItemRecord.module.css';
 
 const ItemRecord = (item: ItemInterface) => {
   const { dispatch, ACTIONS } = useAppContext();
@@ -18,10 +18,10 @@ const ItemRecord = (item: ItemInterface) => {
   }, [isDeletedVisible, dispatch, item, ACTIONS]);
 
   const deleteItem = () => {
-    fetch("/api/delete-item", {
-      method: "POST",
+    fetch('/api/delete-item', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ id: item._id }),
     })
@@ -44,15 +44,15 @@ const ItemRecord = (item: ItemInterface) => {
   return (
     <li data-testid="item-record">
       {item.company}
-      <span className={styles["manage-item"]} onClick={deleteItem}>
+      <span className={styles['manage-item']} onClick={deleteItem}>
         Delete
       </span>
       -
-      <span className={styles["manage-item"]} onClick={editItem}>
+      <span className={styles['manage-item']} onClick={editItem}>
         Edit
       </span>
       <span
-        className={`${styles.deleted} ${isDeletedVisible ? "" : "hidden"} `}
+        className={`${styles.deleted} ${isDeletedVisible ? '' : 'hidden'} `}
       >
         Removing item
       </span>

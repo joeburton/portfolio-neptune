@@ -1,8 +1,8 @@
-import styles from "../css/ContentIntro.module.css";
+import styles from '../css/ContentIntro.module.css';
 
 const rule = {
   background: `url(${process.env.PUBLIC_URL + `../images/line.png`}) repeat-x`,
-  backgroundPosition: "left center",
+  backgroundPosition: 'left center',
 };
 
 const ContentIntro = ({ content }: any) => {

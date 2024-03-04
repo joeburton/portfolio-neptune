@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from './Header';
+import Footer from './Footer';
 
-import Experiments from "./Experiments";
-import ContentIntro from "./ContentIntro";
-import ContentAbout from "./ContentAbout";
-import ContentContact from "./ContentContact";
-import ContentProjects from "./ContentProjects";
+import Experiments from './Experiments';
+import ContentIntro from './ContentIntro';
+import ContentAbout from './ContentAbout';
+import ContentContact from './ContentContact';
+import ContentProjects from './ContentProjects';
 
-import siteContent from "../content";
-import { useAppContext } from "../store";
-import { useKeyPress } from "../hooks/useKeyPress";
+import siteContent from '../content';
+import { useAppContext } from '../store';
+import { useKeyPress } from '../hooks/useKeyPress';
 
 const scrollTo = (e: { target: { id: any }; preventDefault: () => void }) => {
   const element = document.querySelector(e.target.id).offsetTop;
   e.preventDefault();
   window.scrollTo({
-    behavior: "smooth",
+    behavior: 'smooth',
     left: 0,
     top: element,
   });
@@ -26,9 +26,9 @@ const scrollTo = (e: { target: { id: any }; preventDefault: () => void }) => {
 const App = () => {
   const { state, dispatch, ACTIONS } = useAppContext();
 
-  const showRemoveExperimentsButton: boolean = useKeyPress("k");
+  const showRemoveExperimentsButton: boolean = useKeyPress('k');
 
-  console.log("current state: ", state);
+  console.log('current state: ', state);
 
   const [removeExperiments, setRemoveExperiments] = useState(true);
 
@@ -41,7 +41,7 @@ const App = () => {
       {state.content && (
         <>
           <Header content={state.content.header} scrollTo={scrollTo} />
-          <section className={`main ${state.manageActive ? "hidden" : ""}`}>
+          <section className={`main ${state.manageActive ? 'hidden' : ''}`}>
             {showRemoveExperimentsButton && (
               <button onClick={() => setRemoveExperiments(false)}>
                 Remove Experiments

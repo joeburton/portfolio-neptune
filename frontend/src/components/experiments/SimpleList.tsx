@@ -1,4 +1,4 @@
-import styles from "../../css/SimpleList.module.css";
+import styles from '../../css/SimpleList.module.css';
 
 interface Candidate {
   name: string;

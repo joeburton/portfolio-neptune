@@ -1,11 +1,11 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer } from 'react';
 
-import { useAppContext } from "../store";
-import ItemForm from "./ItemForm";
-import ItemRecord from "./ItemRecord";
-import Login from "./Login";
+import { useAppContext } from '../store';
+import ItemForm from './ItemForm';
+import ItemRecord from './ItemRecord';
+import Login from './Login';
 
-import styles from "../css/Manage.module.css";
+import styles from '../css/Manage.module.css';
 
 type State = {
   manageItems: boolean;
@@ -80,7 +80,7 @@ const Manage = () => {
                 payload: true,
               })
             }
-            className={adminState.manageItems ? styles.active : ""}
+            className={adminState.manageItems ? styles.active : ''}
           >
             Manage
           </li>
@@ -92,7 +92,7 @@ const Manage = () => {
                   payload: true,
                 })
               }
-              className={adminState.addItem ? styles.active : ""}
+              className={adminState.addItem ? styles.active : ''}
             >
               Add Item
             </li>
@@ -106,10 +106,10 @@ const Manage = () => {
                 });
                 dispatch({
                   type: ACTIONS.SET_EDIT_ITEM_ID,
-                  payload: "",
+                  payload: '',
                 });
               }}
-              className={adminState.itemsList ? styles.active : ""}
+              className={adminState.itemsList ? styles.active : ''}
             >
               Items List
             </li>
@@ -119,13 +119,13 @@ const Manage = () => {
           )}
         </ul>
         {adminState.manageItems && (
-          <div className={styles["manage-items"]} data-testid="manage-items">
+          <div className={styles['manage-items']} data-testid="manage-items">
             <Login />
           </div>
         )}
         {adminState.addItem && <ItemForm />}
         {adminState.itemsList && (
-          <div className={styles["items-list"]} data-testid="items-list">
+          <div className={styles['items-list']} data-testid="items-list">
             <h4>Items List</h4>
             <ul>
               {items.map((item, i) => {

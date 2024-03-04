@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 // Hook
 export const useKeyPress = (targetKey: string): boolean => {
@@ -7,18 +7,17 @@ export const useKeyPress = (targetKey: string): boolean => {
 
   // Add event listeners
   useEffect(() => {
-    
     // If pressed key is our target key then set to true
-    function downHandler( e : KeyboardEvent): void {
-      console.log(e.key)
-        setKeyPressed(e.key === targetKey ? true : false);
+    function downHandler(e: KeyboardEvent): void {
+      console.log(e.key);
+      setKeyPressed(e.key === targetKey ? true : false);
     }
 
-    window.addEventListener("keydown", downHandler);
+    window.addEventListener('keydown', downHandler);
     // Remove event listeners on cleanup
     return () => {
-      console.log("remove events");
-      window.removeEventListener("keydown", downHandler);
+      console.log('remove events');
+      window.removeEventListener('keydown', downHandler);
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
   return keyPressed;

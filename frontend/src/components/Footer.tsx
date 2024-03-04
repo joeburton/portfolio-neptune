@@ -1,4 +1,4 @@
-import styles from "../css/Footer.module.css";
+import styles from '../css/Footer.module.css';
 
 interface FooterProps {
   content: any;

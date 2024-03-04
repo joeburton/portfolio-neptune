@@ -1,6 +1,6 @@
-import BackToTop from "./BackToTop";
+import BackToTop from './BackToTop';
 
-import styles from "../css/ContentAbout.module.css";
+import styles from '../css/ContentAbout.module.css';
 
 interface ContentAboutProps {
   scrollTo: any;

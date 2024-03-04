@@ -64,7 +64,7 @@ const Login = () => {
   };
 
   return (
-    <div className={styles['form-container']} data-testid='login'>
+    <div className={styles['form-container']} data-testid="login">
       <Formik
         initialValues={{
           username: '',
@@ -100,33 +100,33 @@ const Login = () => {
                   <>
                     <div
                       className={styles['form-group']}
-                      data-testid='username'
+                      data-testid="username"
                     >
-                      <label htmlFor='username'>Username</label>
-                      <Field name='username' />
+                      <label htmlFor="username">Username</label>
+                      <Field name="username" />
                       <ErrorMessage
                         className={styles['error-message']}
-                        component='div'
-                        name='username'
+                        component="div"
+                        name="username"
                       />
                     </div>
                     <div
                       className={styles['form-group']}
-                      data-testid='password'
+                      data-testid="password"
                     >
-                      <label htmlFor='password'>Password</label>
+                      <label htmlFor="password">Password</label>
                       <Field
-                        type='password'
-                        name='password'
-                        autoComplete='off'
+                        type="password"
+                        name="password"
+                        autoComplete="off"
                       />
                       <ErrorMessage
                         className={styles['error-message']}
-                        component='div'
-                        name='password'
+                        component="div"
+                        name="password"
                       />
                     </div>
-                    <button type='submit'>Login</button>
+                    <button type="submit">Login</button>
                   </>
                 )}
                 {userSession.loggedIn && (

@@ -1,6 +1,6 @@
-import BackToTop from "./BackToTop";
+import BackToTop from './BackToTop';
 
-import styles from "../css/ContentContact.module.css";
+import styles from '../css/ContentContact.module.css';
 
 interface ContentContactProps {
   scrollTo: any;

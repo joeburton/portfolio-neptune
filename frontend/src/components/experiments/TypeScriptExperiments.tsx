@@ -1,35 +1,35 @@
-import styles from "../../css/TypeScriptExperiments.module.css";
+import styles from '../../css/TypeScriptExperiments.module.css';
 
 export const TypeScriptExperiments = () => {
   enum PrintMedia {
     Magazine,
-    Newspaper = "NEWSPAPER",
+    Newspaper = 'NEWSPAPER',
     Newsletter = 0,
-    Book = "BOOK",
+    Book = 'BOOK',
   }
 
   function getMedia(mediaName: string): PrintMedia {
-    if (mediaName === "Forbes" || mediaName === "Outlook") {
+    if (mediaName === 'Forbes' || mediaName === 'Outlook') {
       return PrintMedia.Magazine;
     }
-    if (mediaName === "Sun") {
+    if (mediaName === 'Sun') {
       return PrintMedia.Newspaper;
     }
   }
 
-  let mediaType: PrintMedia = getMedia("Sun");
+  let mediaType: PrintMedia = getMedia('Sun');
 
-  console.log("mediaType: ", mediaType);
+  console.log('mediaType: ', mediaType);
 
   enum CardinalDirection {
-    North = "N",
-    East = "E",
-    South = "S",
-    West = "W",
+    North = 'N',
+    East = 'E',
+    South = 'S',
+    West = 'W',
   }
 
-  if ("N" === CardinalDirection.North) {
-    console.log("Go North");
+  if ('N' === CardinalDirection.North) {
+    console.log('Go North');
   }
 
   return <div className={styles.container}>TypeScript Experiments</div>;
