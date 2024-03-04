@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import styles from '../css/Item.module.css';
-import '../css/logos.css';
+import styles from "../css/Item.module.css";
+import "../css/logos.css";
 
 export interface LinksInterface {
   visual: string;
@@ -26,11 +26,11 @@ const Links = (props: any) => {
       id={`item-${index}`}
       key={index}
       href={`${link.url}`}
-      target='_blank'
-      rel='noopener noreferrer'
+      target="_blank"
+      rel="noopener noreferrer"
     >{`${link.visual}`}</a>
   ));
-  return <div className='links'>{links}</div>;
+  return <div className="links">{links}</div>;
 };
 
 export const Item = (item: ItemInterface) => {
@@ -45,16 +45,16 @@ export const Item = (item: ItemInterface) => {
   }, [item]);
 
   return (
-    <li className={styles.item} data-testid='project-item'>
+    <li className={styles.item} data-testid="project-item">
       {item.logo && (
         <img
           src={process.env.PUBLIC_URL + `../images/${item.logo}`}
           alt={`${item.company}`}
-          className={`${styles['company-logo']} ${item.class}`}
+          className={`${styles["company-logo"]} ${item.class}`}
         />
       )}
       {item.role && (
-        <p className={!item.logo ? 'no-logo' : ''}>Role&#58; {item.role}</p>
+        <p className={!item.logo ? "no-logo" : ""}>Role&#58; {item.role}</p>
       )}
       {item.company && <p>Company: {item.company}</p>}
       {item.skills && (
@@ -66,14 +66,14 @@ export const Item = (item: ItemInterface) => {
       {item.description && (
         <p>
           <span
-            data-testid='description'
+            data-testid="description"
             className={styles.details}
             style={{ height: expand ? `100%` : `60px` }}
             dangerouslySetInnerHTML={{ __html: item.description }}
           />
           {expandVisible && (
             <span
-              data-testid='expand-description'
+              data-testid="expand-description"
               onClick={() => {
                 setExpand(!expand);
               }}

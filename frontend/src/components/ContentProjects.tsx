@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import BackToTop from './BackToTop';
-import useFetch from '../hooks/useDataLoader';
-import { useAppContext } from '../store';
-import { Item, ItemInterface } from './Item';
+import { useEffect } from "react";
+import BackToTop from "./BackToTop";
+import useFetch from "../hooks/useDataLoader";
+import { useAppContext } from "../store";
+import { Item, ItemInterface } from "./Item";
 
-import styles from '../css/ContentProjects.module.css';
+import styles from "../css/ContentProjects.module.css";
 
 interface ContentProjectsProps {
   scrollTo: any;
@@ -17,7 +17,7 @@ const ContentProjects = (props: ContentProjectsProps) => {
 
   const items = state?.items;
 
-  const [response, error] = useFetch('/api/source');
+  const [response, error] = useFetch("/api/source");
 
   useEffect(() => {
     if (response) {
@@ -31,9 +31,9 @@ const ContentProjects = (props: ContentProjectsProps) => {
 
   return (
     <section
-      id='projects'
+      id="projects"
       className={styles.projects}
-      data-testid='contentProjects'
+      data-testid="contentProjects"
     >
       <div className={styles.content}>
         {content.projects && (
@@ -43,9 +43,9 @@ const ContentProjects = (props: ContentProjectsProps) => {
               <>
                 <h4
                   style={{
-                    margin: 'auto 0',
-                    textAlign: 'center',
-                    color: 'black',
+                    margin: "auto 0",
+                    textAlign: "center",
+                    color: "black",
                   }}
                 >
                   Projects loading...
@@ -54,8 +54,8 @@ const ContentProjects = (props: ContentProjectsProps) => {
             )}
             {error && (
               <h4
-                style={{ margin: 'auto 0', textAlign: 'center', color: 'red' }}
-                data-testid='has-error'
+                style={{ margin: "auto 0", textAlign: "center", color: "red" }}
+                data-testid="has-error"
               >
                 {content.errors.serviceError}
               </h4>
